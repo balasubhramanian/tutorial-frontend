@@ -1,0 +1,17 @@
+{
+  "name": "simple-cart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors",
+    "start": "webpack && npm run dev"
+  },  
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
