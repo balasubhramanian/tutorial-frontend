@@ -1,3 +1,14 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+
+let render = ()=>{
+  const Header = require('./components/header').default;
+  ReactDOM.render(<Header/>,document.getElementById("header"));
+}
+
+
+render();
 
 
 
