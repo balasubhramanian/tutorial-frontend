@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 
 
 let render = ()=>{
-  const Header = require('./components/header').default;
-  ReactDOM.render(<Header/>,document.getElementById("header"));
+  const App = require('./components/app').default;
+  ReactDOM.render(<App/>,document.getElementById("root"));
 }
 
 
