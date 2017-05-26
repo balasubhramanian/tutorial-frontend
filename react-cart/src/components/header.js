@@ -1,12 +1,15 @@
 import React from 'react'
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+
+
 
 class Header extends React.Component{
 	render(){
 		return (<div className="header">
 				<ul>
-					<li><a onclick="showList()">List</a></li>
-					<li><a onclick="showAdd()">View</a></li>
-					<li><a onclick="showEdit()">Add</a></li>
+					<li><Link to="/">List</Link></li>
+					<li><Link to="/add">Add</Link></li>
+					<li><Link to="/edit">Edit</Link></li>
 				</ul>
 			</div>)
 
