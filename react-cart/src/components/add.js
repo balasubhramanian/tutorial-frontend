@@ -16,6 +16,8 @@ class Add extends React.Component{
 		});
 		this.clearForm();
 		this.showMessage();
+		this.props.router.push("/")
+
 	}
 
 	showMessage(){
