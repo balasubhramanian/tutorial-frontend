@@ -7,7 +7,11 @@ var items = [{name: 'test',price:'44',category:'electornics'}];
 	}
 
 	get(){
-		return items;
+		return new Promise(function(resolve, reject) {  
+		   setTimeout(() => {
+		   	resolve(items)
+		   },2000);
+		});
 	}
 
 }

@@ -3,12 +3,27 @@ import cartModel from './model';
 
 class List extends React.Component{
 
+	constructor(props){
+		super(props);
+		this.state = {
+			isLoading : false,items : []
+		}
+	}
+
+	componentWillMount(){
+		this.setState({isLoading:true})
+		cartModel.get().then((items)=>{
+			this.setState({isLoading:false,items:items})
+		})
+	}
+
 	render(){
 		window.a = cartModel;
 
 		return <div className="list">
-					{
-						cartModel.get().map((model)=>{
+		{this.state.isLoading ? 'Fetching your items' : ''}
+					{	
+						this.state.items.map((model)=>{
 							return <div>
 										<h5>{model.name}</h5>
 										<b>{model.price}</b>
