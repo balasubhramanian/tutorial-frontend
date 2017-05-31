@@ -3,7 +3,13 @@ var items = [{name: 'test',price:'44',category:'electornics'}];
 	
 
 	save(item){
-		items.push(item);
+		return new Promise(function(resolve, reject) {  
+		   setTimeout(() => {
+		   	items.push(item);
+		   	resolve()
+		   }, 2000);
+		});
+		
 	}
 
 	get(){
