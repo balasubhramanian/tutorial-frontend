@@ -1,5 +1,5 @@
 import React from 'react';
-import cartModel from './model';
+import { connect } from 'react-redux'
 import * as action from '../action'
 
 
@@ -27,3 +27,16 @@ class List extends React.Component{
 
 
 export default List;
+function mapStateToProps(state){
+	return {
+		items : state
+	}
+}
+
+export default connect(
+  mapStateToProps,
+  { ...action }
+)(List)
+
+
+
