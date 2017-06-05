@@ -2,6 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 
+import { createStore, applyMiddleware } from 'redux'
+import reducer from './reducer'
+const store = createStore(
+  reducer
+)
 let render = ()=>{
   const App = require('./components/app').default;
   ReactDOM.render(<App/>,document.getElementById("root"));
