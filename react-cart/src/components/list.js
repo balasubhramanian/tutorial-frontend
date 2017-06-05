@@ -5,12 +5,16 @@ import * as action from '../action'
 
 class List extends React.Component{
 
+	handleClick(){
+		this.props.testAction();
+	}
 	render(){
-		window.a = cartModel;
-
-		return <div className="list">
+		return (
+				<div className="list">
+				<button onClick={()=>{this.handleClick()}}>test action
+				</button>
 					{
-						cartModel.get().map((model)=>{
+						this.props.items.map((model)=>{
 							return <div>
 										<h5>{model.name}</h5>
 										<b>{model.price}</b>
@@ -20,13 +24,13 @@ class List extends React.Component{
 					})
 					}
 					
-				</div>	
+				</div>	)
 
 	}
 }
 
 
-export default List;
+
 function mapStateToProps(state){
 	return {
 		items : state
