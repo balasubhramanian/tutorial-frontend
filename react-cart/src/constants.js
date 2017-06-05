@@ -1,0 +1,5 @@
+
+export default {
+	FETCH_ALL_ITEMS : 'FETCH_ALL_ITEMS',
+	TEST_ACTION : 'TEST_ACTION'
+}
