@@ -4,12 +4,16 @@ import ReactDOM from 'react-dom'
 
 import { createStore, applyMiddleware } from 'redux'
 import reducer from './reducer'
+import { Provider } from 'react-redux'
+
 const store = createStore(
   reducer
 )
+
+
 let render = ()=>{
   const App = require('./components/app').default;
-  ReactDOM.render(<App/>,document.getElementById("root"));
+  ReactDOM.render(<Provider store={store}><App/></Provider>,document.getElementById("root"));
 }
 
 
