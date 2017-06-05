@@ -1,5 +1,5 @@
 import React from 'react';
-import cartModel from './model'
+import cartModel from '../store/model'
 class Add extends React.Component{
 
 	constructor(props) {
