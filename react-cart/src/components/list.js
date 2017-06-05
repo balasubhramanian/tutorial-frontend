@@ -1,5 +1,7 @@
 import React from 'react';
 import cartModel from './model';
+import * as action from '../action'
+
 
 class List extends React.Component{
 
