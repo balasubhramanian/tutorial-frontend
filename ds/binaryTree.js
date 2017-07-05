@@ -146,8 +146,11 @@ function BinaryTree() {
              * replace the data and ref
              * delete the smallest
              */
+             var smallestNode = this.findSmallestNode(node.right);
 
-
+             node.data = smallestNode.data;
+             node.right  = this.removeInternal(node.right,smallestNode.data);
+             return node;
 
 
 
@@ -159,6 +162,18 @@ function BinaryTree() {
 
         return node;
 
+    }
+
+    this.findSmallestNode = function(node){
+        var smallestNode = node;
+        var tmp = node.left
+        while(tmp){
+            if(tmp.data<smallestNode.data){
+                smallest = tmp;
+            }
+            tmp = tmp.left;
+        }
+        return smallestNode;
     }
 
 
@@ -228,5 +243,5 @@ console.log('Printing data ----------')
     //tree.inOrder();
     //tree.postOrder();
 
-//tree.remove(1)
-tree.remove(2)
+tree.remove(5)
+//console.log(tree.smallestNode())
