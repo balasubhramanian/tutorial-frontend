@@ -227,6 +227,54 @@ function BinaryTree() {
 
     }
 
+    this.dfs = function(){
+        var node = root;
+        this.dfsInternal(node)
+    }
+
+    this.dfsInternal = function(node){
+        if(node.left == null & node.right == null){
+            console.log(node.data);
+            node.visited = true;
+            return;
+        }
+
+        if(node.left && !node.left.visited){
+            this.dfsInternal(node.left)
+        }
+        
+        if(node.right && !node.right.visited){
+            this.dfsInternal(node.right)
+        }
+
+        console.log(node.data)
+        node.visited = true;
+    }
+
+
+    this.bfs = function(){
+        var queue = [];
+        var node = root;
+        this.bfsInternal(node,queue);
+    }
+
+
+    this.bfsInternal = function(node,queue){
+        console.log(node.data);
+        if(node.left){
+            queue.push(node.left)
+        }
+        if(node.right){
+            queue.push(node.right)   
+        }
+
+        if(queue.length){
+            this.bfsInternal(queue.splice(0,1)[0],queue);
+        }
+    }
+
+
+
 
 }
 
@@ -243,5 +291,8 @@ console.log('Printing data ----------')
     //tree.inOrder();
     //tree.postOrder();
 
-tree.remove(5)
+//tree.remove(5)
 //console.log(tree.smallestNode())
+
+//tree.dfs()
+tree.bfs()
